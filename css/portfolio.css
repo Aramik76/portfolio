@@ -1,8 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
+
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #44311d, #ffffff);
+    color: #222;
+}
+
+a {
+    color: inherit;
 }
 
 .main {
@@ -35,6 +45,7 @@ body {
 .nav {
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
 }
 
 .nav a {
@@ -43,10 +54,12 @@ body {
     text-decoration: none;
     padding: 4px 8px;
     border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .nav a:hover {
     background-color: #e3f0ff;
+    color: #2f5fa4;
 }
 
 .hero {
@@ -63,6 +76,18 @@ body {
     text-align: left;
 }
 
+.hero-text h1 {
+    font-size: 28px;
+    margin: 0 0 10px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin: 0 0 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
 .hero-photo {
     flex: 0 0 220px;
 }
@@ -74,17 +99,7 @@ body {
     border-radius: 50%;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     border: 4px solid #fff;
-}
-
-.hero h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #555;
+    display: block;
 }
 
 .section {
@@ -94,6 +109,7 @@ body {
 .section h2 {
     text-align: center;
     margin-bottom: 16px;
+    font-size: 22px;
 }
 
 .projects {
@@ -135,33 +151,37 @@ body {
 }
 
 .project-content h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
+    margin-top: 0 0 8px;
+    font-size: 18px;
 }
 
 .project-content p {
-    margin-bottom: 14px;
+    margin: 0 0 14px;
     color: #555;
+    line-height: 1.5;
+    font-size: 14px;
 }
 
-.project-card h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-}
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin-top: 10px;
     padding: 8px 16px;
     background-color: #4a90e2;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 4px;
     font-size: 14px;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn:hover {
     background-color: #3a78c0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .footer {
@@ -171,16 +191,17 @@ body {
     padding: 24px 20px 30px;
     margin-top: 20px;
     background-color: #f7f9fc;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px 8px 0 0;
 }
 
 .footer h2 {
-    margin-bottom: 8px;
+    margin: 0 0 8px;
     font-size: 18px;
 }
 
 .footer p {
     margin: 4px 0;
+    line-height: 1.5;
 }
 
 .footer a {
@@ -215,7 +236,7 @@ body {
 @media (max-width: 600px) {
     .main {
         margin: 20px auto;
-        padding: 16px 16px 20px;
+        padding: 16px;
     }
 
     .header {
@@ -224,11 +245,11 @@ body {
         padding: 12px 16px;
     }
 
-    .hero h1 {
+    .hero-text h1 {
         font-size: 24px;
     }
 
-    .hero p {
+    .hero-text p {
         font-size: 15px;
     }
 }
